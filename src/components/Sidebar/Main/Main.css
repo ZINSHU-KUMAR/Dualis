@@ -1,0 +1,264 @@
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.15);  /* Increased scaling for more intensity */
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+@keyframes hoverEffect {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Rotating text to give dynamic movement */
+    }
+}
+
+@keyframes floatEffect {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Slight floating up */
+    }
+    100% {
+        transform: translateY(0); /* Floating back down */
+    }
+}
+
+.main {
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 10vh;
+    position: relative;
+    background: linear-gradient(135deg, #7B2FF7, #FF7B9D);
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 90px; /* Adjust for sidebar width */
+    transition: margin-left 0.3s ease-in-out; /* Smooth transition */
+    overflow: hidden; /* Prevent overflow of animations */
+}
+
+/* Navigation Bar */
+.main .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 25px;
+    color: #f0f0f0;
+    position: relative;
+    z-index: 10;
+}
+
+.main .nav img {
+    width: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for nav image */
+.main .nav img:hover {
+    transform: rotate(360deg); /* Spin on hover */
+}
+
+/* Greeting Text */
+.main .greet {
+    margin: 40px 0px;
+    font-size: 60px;
+    color: #fff;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.main .greet span {
+    background: linear-gradient(90deg, #F9D423, #FF4E50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Card Section */
+.main .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    perspective: 1500px; /* Add depth to the card grid */
+}
+
+.main .card {
+    height: 220px;
+    padding: 20px;
+    background-color: #e15eea;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.main .card img {
+    width: 40px;
+    padding: 8px;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 10px;
+}
+
+.main .card p {
+    color: #f0f0f0;
+    font-size: 16px;
+}
+
+.main .card:hover {
+    transform: rotateY(15deg) translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background-color: #f79cd4;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f0a3fa;
+    padding: 12px 25px;
+    border-radius: 50px;
+    width: 50%; /* Set the search box width to 50% */
+    margin: 20px auto; /* Center it horizontally */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.search-box img {
+    width: 26px;
+    cursor: pointer;
+}
+
+.search-box input {
+    width: 100%; /* Make input fill the width of its container */
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 18px;
+    color: #460949;
+}
+
+.search-box div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+/* Bottom Section */
+.main .bottom-info {
+    font-size: 14px;
+    margin: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* Result Section */
+.result {
+    padding: 20px 5%;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: linear-gradient(135deg, #7B2FF7, #FF7B9D);
+    border-radius: 8px;
+}
+
+.result::-webkit-scrollbar {
+    display: none;
+}
+
+.result-title {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.result img {
+    width: 45px;
+    border-radius: 50%;
+}
+
+.result-data {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.loader {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loader hr {
+    border-radius: 4px;
+    border: none;
+    background-color: #fff;
+    background: linear-gradient(to right, #7B2FF7, #FF7B9D);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: loader 1.5s infinite;
+}
+
+@keyframes loader {
+    0% {
+        background-position: -800px 0;
+    }
+    100% {
+        background-position: 800px 0;
+    }
+}
+
+.result-data p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .main-bottom input {
+        flex: none;
+        width: 160px;
+    }
+    .main-bottom img {
+        width: 22px;
+    }
+    .search-box {
+        padding: 8px 15px;
+    }
+    .search-box div {
+        gap: 8px;
+    }
+    .main .card {
+        height: 180px;
+        padding: 10px;
+    }
+    .main .cards {
+        gap: 10px;
+    }
+}

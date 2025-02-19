@@ -1,0 +1,147 @@
+/* Sidebar Styles */
+.sidebar {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(145deg, #ff7b9d, #7b2ff7); /* Vibrant gradient */
+    padding: 25px 15px;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    position: fixed; /* Keep it on the side */
+    z-index: 1000;
+    left: 0;
+    top: 0;
+}
+
+/* Remove outline on button focus */
+.delete-btn:focus {
+    outline: none; /* Removes the outline */
+}
+
+/* Sidebar images */
+.sidebar img {
+    width: 22px;
+    transition: transform 0.2s ease;
+}
+
+/* Menu Icon */
+.sidebar .menu {
+    display: block;
+    margin: 0 auto; /* This will center the icon horizontally */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .menu:hover {
+    transform: rotate(180deg); /* Smooth rotation on hover */
+}
+
+/* New Chat Button */
+.sidebar .new-chat {
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .new-chat:hover {
+    background-color: #f8f9fa; /* Light hover effect */
+    transform: translateY(-5px); /* Subtle raise effect */
+}
+
+.sidebar .new-chat p {
+    margin: 0;
+}
+
+/* Recent Section */
+.sidebar .recent {
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.sidebar .recent-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.sidebar .recent-entry {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    padding-right: 40px;
+    border-radius: 50px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar .recent-entry:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle white hover effect */
+    transform: translateX(10px); /* Smooth slide on hover */
+}
+
+.sidebar .recent-entry img {
+    width: 24px;
+    transition: transform 0.2s ease;
+}
+
+.sidebar .recent-entry:hover img {
+    transform: rotate(360deg); /* Rotate icon on hover */
+}
+
+/* Bottom Section */
+.sidebar .bottom {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.sidebar .bottom-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar .bottom-item:hover {
+    color: #ff7b9d; /* Vibrant color change on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.sidebar .bottom-item:active {
+    transform: scale(0.95); /* Slight shrink on click */
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 600px) {
+    .sidebar {
+        display: none; /* Hide sidebar on small screens */
+    }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
