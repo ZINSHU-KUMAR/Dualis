@@ -21,15 +21,19 @@ Dualis is a Generative AI-powered chatbot application built using **React JS** a
 # Clone the repository
 git clone https://github.com/yourusername/dualis.git
 
+```bash
 # Navigate to the project directory
 cd dualis
 
+```bash
 # Install dependencies
 npm install
 
+```bash
 # Create .env file and add your Gemini API key
 REACT_APP_GEMINI_API_KEY=your_api_key_here
 
+```bash
 # Start the development server
 npm start
 
