@@ -17,7 +17,6 @@ Dualis is a Generative AI-powered chatbot application built using **React JS** a
 - **Deployment:** Vercel  
 
 ## 📌 Installation & Setup  
-```bash
 # Clone the repository
 git clone https://github.com/yourusername/dualis.git
 
